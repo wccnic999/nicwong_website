@@ -1,0 +1,25 @@
+.menu{
+    ul{
+        li{
+            display: inline-block;
+            margin-left: 20px;
+            a{
+                color: #9A9A9A;
+                padding: 5px 0;
+                position: relative;
+                display: inline-block;
+                span{
+                    display: block;
+                }
+            }
+            &:hover{
+                a{
+                    color: #000;
+                }
+            }
+            &:first-child{
+                margin-left: 0
+            }
+        }
+    }
+}
