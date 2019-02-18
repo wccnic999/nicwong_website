@@ -68,6 +68,9 @@ class HomePage extends Component {
                     })
                     }
                 </div>
+                <ul className={`work-list`}>
+                    
+                </ul>
             </section>
         )
     }

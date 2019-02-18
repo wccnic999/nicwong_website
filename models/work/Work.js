@@ -24,7 +24,7 @@ workEnhancedList.add({
     link: {
         type: Types.Url,
     },
-    Categories: { type: Types.Relationship, ref: 'Category', many: true, initial: true, required: true },
+    categories: { type: Types.Relationship, ref: 'Category', many: true, initial: true, required: true },
     order: {
         type: Types.Number
     },
