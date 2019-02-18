@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import _ from 'lodash';
 
 import { getCategoryList } from 'category/reducers/categoryList';
+import { getWorkList } from 'work/reducers/workList';
 
 import classesTop from 'styles_path/home/HomePageTop';
 import classesMid from 'styles_path/home/HomePageMid';
@@ -11,8 +12,9 @@ import classesMid from 'styles_path/home/HomePageMid';
 class HomePage extends Component {
 
     componentWillMount() {
-        const { getCategoryList } = this.props;
+        const { getCategoryList, getWorkList } = this.props;
         getCategoryList();
+        getWorkList();
     }
 
     componentDidMount() {
@@ -52,7 +54,8 @@ class HomePage extends Component {
     }
 
     renderWorksSection() {
-        const { categoryList } = this.props;
+        const { categoryList, workList } = this.props;
+        console.log(workList);
         return (
             <section className={`${classesMid.worksSection}`} ref="works">
                 <div className="seperate"></div>
@@ -84,10 +87,12 @@ class HomePage extends Component {
 const mapStateToProps = state => ({
     screen_size_type: state.app.responsive.type,
     categoryList: state.category.categoryList.data,
+    workList: state.work.workList.data
 });
 
 const mapDispatchToProps = {
-    getCategoryList
+    getCategoryList,
+    getWorkList
 };
 
 export default withRouter(
